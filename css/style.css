@@ -3,7 +3,7 @@
   background-color: aliceblue;
 }
 
-.info{
+.info {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -18,12 +18,12 @@
   transition: 0.4s ease;
 }
 
-.card:hover .info{
+.card:hover .info {
   opacity: 1;
   transform: translateY(0);
 }
 
-.btn{
+.btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   background-color: #007bff;
@@ -36,19 +36,21 @@
 
 .card {
   position: relative;
-  width: 300px;
+  flex: 1 1 250px;
+  max-width: 300px;
   height: 400px;
   margin: 20px;
   border-radius: 10px;
 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card-wrap {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* Espaço entre os cards */
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 .container {
@@ -57,3 +59,109 @@
   margin: 20px auto;
   border-radius: 10px;
 }
+
+.preco-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 100px;
+  align-self: flex-end; /* Fica embaixo */
+  margin-right: 10px;
+  margin-top: 15px;
+}
+
+.preco {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.centavos {
+  font-size: 0.6rem;
+  vertical-align: super;
+}
+
+.parcelamento {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.descricaoProduto {
+  font-size: 1.1rem;
+  width: auto; /* ou defina um valor fixo se preferir */
+  color: #333;
+  flex: 1;
+  align-self: flex-start; /* Fica no topo */
+  margin-bottom: 15px;
+  margin-left: 10px; 
+
+}
+
+.infoProduto {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinha os itens ao topo */
+  gap: 10px;
+}
+
+/* Sidebar de filtro */
+.sidebar-filtro {
+  width: 260px;
+  background: #8f77ef;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  flex-shrink: 0;
+}
+
+.filtro-box h5 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.slider {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#precoValor {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-check {
+  margin-bottom: 10px;
+}
+
+.form-check-label {
+  margin-left: 8px;
+  color: #333;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 15px 0;
+}
+
+.produtos-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.card-wrap h2 {
+  margin-top: 48px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MXTCS Skincare</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -25,49 +26,35 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Nós
-                            </a>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Produtos
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" role="button">
+                                <i class="bi bi-person" style="font-size: 1.5rem;"></i><b>Minha Conta</b>
                             </a>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Minha Conta
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" role="button">
+                                <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i> <b>Dúvidas</b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="carrinho.html" role="button">
+                                <i class="bi bi-cart3" style="font-size: 1.5rem;"></i> <b>Carrinho</b>
                             </a>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Carrinho
-                            </a>
 
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Acessar</a></li>
-                                <li><a class="dropdown-item" href="#">Registrar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Sair</a></li>
-                            </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" />
-                        <button class="btn btn-outline" type="submit" title="Pesquisar">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black"
+                    <form class="d-flex align-items-center" role="search">
+                        <input class="form-control me-2" type="search" placeholder="O que você está procurando?"
+                            aria-label="Search" style="width: 280px;" />
+                        <button class="btn p-0" type="submit" title="Pesquisar"
+                            style="background: transparent; border: none; box-shadow: none; margin-top: -1px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black"
                                 class="bi bi-search" viewBox="0 0 16 16">
                                 <path
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                             </svg>
                         </button>
-
                     </form>
                 </div>
             </div>
@@ -127,65 +114,606 @@
         </div>
 
         <section>
-            <div class="card-wrap">
-                <div class="card">
-                    <img src="img/boosterazura.png" alt="Booster">
-                    <div class="info">
-                        <h2>Booster Azura</h2>
-                        <p>O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação intensa e
-                            revitalização.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais</a>
+            <div class="produtos-container">
+                <aside class="sidebar-filtro">
+                    <div class="filtro-box">
+                        <h5>Filtrar por preço</h5>
+                        <input type="range" min="0" max="500" value="500" class="slider" id="precoRange">
+                        <div id="precoValor">Qualquer preço</div>
+                        <hr>
+                        <h5>Categoria</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="skincare">
+                            <label class="form-check-label" for="skincare">Skincare</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="maquiagem">
+                            <label class="form-check-label" for="maquiagem">Maquiagem</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="corpo">
+                            <label class="form-check-label" for="corpo">Corpo</label>
+                        </div>
+                        <hr>
+                        <h5>Tipo de Produto</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hidratante">
+                            <label class="form-check-label" for="hidratante">Hidratante</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="mascara">
+                            <label class="form-check-label" for="mascara">Máscara Facial</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sabonete">
+                            <label class="form-check-label" for="sabonete">Sabonete</label>
+                        </div>
+                        <hr>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="ofertas">
+                            <label class="form-check-label" for="ofertas">Mais Vendidos</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="novidades">
+                            <label class="form-check-label" for="novidades">Novidades</label>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="img/boosterazura.png" alt="Booster">
-                    <div class="info">
-                        <h2>Booster Azura</h2>
-                        <p>O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação intensa e
-                            revitalização.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/boosterazura.png" alt="Booster">
-                    <div class="info">
-                        <h2>Booster Azura</h2>
-                        <p>O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação intensa e
-                            revitalização.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/boosterazura.png" alt="Booster">
-                    <div class="info">
-                        <h2>Booster Azura</h2>
-                        <p>O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação intensa e
-                            revitalização.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais</a>
+                </aside>
+                <div class="card-wrap">
+                    <br>
+                    <h2 class="text-center">
+                        <a href="#" style="text-decoration: none; color: #333;">
+                            <b>Mais Vendidos</b>
+                        </a>
+                    </h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <img src="img/boosterazura.png" alt="Booster Azura">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Hidratante Anti-Acne, <br>Booster Azura</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 37<span class="centavos">25</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 3,66
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Booster Azura</h2>
+                                <p>O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação
+                                    intensa e
+                                    revitalização.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/boosterilumini.png" alt="Booster Ilumini">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Iluminador Facial, <br>Booster Ilumini</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 45<span class="centavos">90</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 4,59
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Booster Ilumini</h2>
+                                <p>O Booster Ilumini proporciona um brilho radiante e saudável para a sua pele.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/breeze.png" alt="Breeze">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Bruma Hidratante, <br>Breeze</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 50<span class="centavos">00</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 5,00
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Breeze</h2>
+                                <p>A Bruma Breeze é refrescante e proporciona hidratação instantânea.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/clean.png" alt="Clean">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Sabonete Facial, <br>Clean</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 30<span class="centavos">10</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 3,01
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Clean</h2>
+                                <p>O Sabonete Clean limpa profundamente e é ideal para todos os tipos de pele.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/mask.png" alt="Máscara Facial">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Máscara Facial, <br>Mask</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 60<span class="centavos">20</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 6,02
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Máscara Facial</h2>
+                                <p>A Máscara Facial proporciona uma limpeza profunda e hidratação intensa.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/img4.jpg" alt="Produto Especial 1">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Produto Especial, <br>Glow Up</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 55<span class="centavos">00</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 5,50
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Glow Up</h2>
+                                <p>Ilumine sua rotina de cuidados com este produto especial.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/img5.jpg" alt="Produto Especial 2">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Produto Especial, <br>Fresh Skin</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 62<span class="centavos">90</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 6,29
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Fresh Skin</h2>
+                                <p>Pele renovada e hidratada todos os dias.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/img6.jpg" alt="Produto Especial 3">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Produto Especial, <br>Magic Touch</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 48<span class="centavos">75</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 4,87
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Magic Touch</h2>
+                                <p>Toque mágico para uma pele perfeita.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/img1.png" alt="Produto Especial 4">
+                            <div class="infoProduto">
+                                <div class="descricaoProduto">
+                                    <p>Produto Especial, <br>Soft Dream</p>
+                                </div>
+                                <div class="preco-container">
+                                    <div class="preco">
+                                        R$ 39<span class="centavos">99</span>
+                                    </div>
+                                    <div class="parcelamento">
+                                        em 12x R$ 3,99
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2>Soft Dream</h2>
+                                <p>Maciez e cuidado em cada aplicação.</p>
+                                <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
+
+            <div class="card-wrap">
+                <br>
+                <h2 class="text-center">
+                    <a href="#" style="text-decoration: none; color: #333;">
+                        <b>Novidades</b>
+                    </a>
+                </h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="img/boosterazura.png" alt="Booster">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Hidratante Anti-Acne, <br>Booster Azura</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 37<span class="centavos">25</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 3,66
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Booster Azura</h2>
+                            <p>O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação intensa e
+                                revitalização.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/boosterilumini.png" alt="Booster Ilumini">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Iluminador Facial, <br>Booster Ilumini</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 45<span class="centavos">90</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 4,59
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Booster Ilumini</h2>
+                            <p>O Booster Ilumini proporciona um brilho radiante e saudável para a sua pele.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/breeze.png" alt="Breeze">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Bruma Hidratante, <br>Breeze</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 50<span class="centavos">00</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 5,00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Breeze</h2>
+                            <p>A Bruma Breeze é refrescante e proporciona hidratação instantânea.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/clean.png" alt="Clean">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Sabonete Facial, <br>Clean</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 30<span class="centavos">10</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 3,01
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Clean</h2>
+                            <p>O Sabonete Clean limpa profundamente e é ideal para todos os tipos de pele.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/mask.png" alt="Máscara Facial">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Máscara Facial, <br>Mask</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 60<span class="centavos">20</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 6,02
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Máscara Facial</h2>
+                            <p>A Máscara Facial proporciona uma limpeza profunda e hidratação intensa.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/boosterazura.png" alt="Booster">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Hidratante Anti-Acne, <br>Booster Azura</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 37<span class="centavos">25</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 3,66
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Booster Azura</h2>
+                            <p>O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação intensa e
+                                revitalização.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/boosterilumini.png" alt="Booster Ilumini">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Iluminador Facial, <br>Booster Ilumini</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 45<span class="centavos">90</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 4,59
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Booster Ilumini</h2>
+                            <p>O Booster Ilumini proporciona um brilho radiante e saudável para a sua pele.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/breeze.png" alt="Breeze">
+                        <div class="infoProduto">
+                            <div class="descricaoProduto">
+                                <p>Bruma Hidratante, <br>Breeze</p>
+                            </div>
+                            <div class="preco-container">
+                                <div class="preco">
+                                    R$ 50<span class="centavos">00</span>
+                                </div>
+                                <div class="parcelamento">
+                                    em 12x R$ 5,00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h2>Breeze</h2>
+                            <p>A Bruma Breeze é refrescante e proporciona hidratação instantânea.</p>
+                            <a href="produto.html" class="btn btn-primary">Ver Produto</a>
+                        </div>
+                    </div>
+                    
+                </div>
         </section>
 
     </main>
 
-
+    <!-- Newsletter: formulário com validação de e-mail -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="newsletterForm" class="p-4 rounded bg-light shadow" novalidate>
+                    <h5 class="mb-3 text-center">Receba novidades e promoções!</h5>
+                    <p class="newsletter-title text-center">Cadastre-se e aproveite um cupom na sua primeira compra!</p>
+                    <div class="mb-3">
+                        <label for="newsletterName" class="form-label">Seu nome:</label>
+                        <input type="text" class="form-control" id="newsletterName" placeholder="Nome completo"
+                            required>
+                        <div class="invalid-feedback">
+                            Por favor, insira seu nome.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newsletterEmail" class="form-label">Seu e-mail:</label>
+                        <input type="email" class="form-control" id="newsletterEmail" placeholder="E-mail" required>
+                        <div class="invalid-feedback">
+                            Por favor, insira um e-mail válido.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                    <p class="newsletter-consent">
+                        Ao se cadastrar, você concorda em receber comunicações MXTCS de acordo com nossa
+                        <a href="#" target="_blank">política de privacidade e termos de uso</a>.
+                    </p>
+                    <div class="alert alert-success d-none" id="newsletterSuccess">
+                        Obrigado por se inscrever! Você receberá novidades e promoções em breve.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="container">
-        <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-            </ul>
-            <p class="text-center text-body-secondary">© 2025 MXTCS Skincare <a href="#"
-                    class="text-body-secondary">Privacy Policy</a></p>
-            <p class="text-center text-body-secondary">Desenvolvido por <a href="https://github.com/Maria-Massucato"
-                    class="text-body-secondary">Maria Eduarda Machado Massucato</a></p>
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Subscribe to our newsletter</h5>
+                        <p>Monthly digest of what's new and exciting from us.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2"> <label for="newsletter1"
+                                class="visually-hidden">Email address</label> <input id="newsletter1" type="email"
+                                class="form-control" placeholder="Email address"> <button class="btn btn-primary"
+                                type="button">Subscribe</button> </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2025 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Instagram"><svg class="bi"
+                                width="24" height="24">
+                                <use xlink:href="#instagram"></use>
+                            </svg></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Facebook"><svg class="bi"
+                                width="24" height="24" aria-hidden="true">
+                                <use xlink:href="#facebook"></use>
+                            </svg></a></li>
+                </ul>
+            </div>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <script>
+        // Validação do formulário de newsletter
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('newsletterForm');
+            const emailInput = document.getElementById('newsletterEmail');
+            const successMsg = document.getElementById('newsletterSuccess');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (form.checkValidity()) {
+                    successMsg.classList.remove('d-none');
+                    form.reset();
+                    form.classList.remove('was-validated');
+                } else {
+                    successMsg.classList.add('d-none');
+                    form.classList.add('was-validated');
+                }
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+            var emailInput = document.getElementById('newsletterEmail');
+            if (!emailInput.checkValidity()) {
+                emailInput.classList.add('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                emailInput.classList.remove('is-invalid');
+                alert('Obrigado por se inscrever!');
+            }
+        });
+    </script>
+    <script>
+        // Validação do formulário de newsletter (nome e e-mail)
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('newsletterForm');
+            const nameInput = document.getElementById('newsletterName');
+            const emailInput = document.getElementById('newsletterEmail');
+            const successMsg = document.getElementById('newsletterSuccess');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                let valid = true;
+
+                if (!nameInput.value.trim()) {
+                    nameInput.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    nameInput.classList.remove('is-invalid');
+                }
+
+                if (!emailInput.checkValidity()) {
+                    emailInput.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    emailInput.classList.remove('is-invalid');
+                }
+
+                if (valid) {
+                    successMsg.classList.remove('d-none');
+                    form.reset();
+                    form.classList.remove('was-validated');
+                } else {
+                    successMsg.classList.add('d-none');
+                    form.classList.add('was-validated');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
