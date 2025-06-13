@@ -27,21 +27,21 @@
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#" role="button">
+                            <a class="nav-link" href="teste.html" role="button">
                                 <i class="bi bi-person" style="font-size: 1.5rem;"></i><b>Minha Conta</b>
                             </a>
+                        </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#" role="button">
+                            <a class="nav-link" href="duvidas.html" role="button">
                                 <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i> <b>Dúvidas</b>
                             </a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="carrinho.html" role="button">
                                 <i class="bi bi-cart3" style="font-size: 1.5rem;"></i> <b>Carrinho</b>
                             </a>
-
-
                         </li>
                     </ul>
                     <form class="d-flex align-items-center" role="search">
@@ -62,8 +62,8 @@
 
 
         <div class="container mt-5">
-            <h1>Bem-vindo ao MXTCS Skincare</h1>
-            <p>Descubra os melhores produtos para cuidar da sua pele.</p>
+            <h1>Bem-vindo ao MXTCS Skincare!</h1>
+            <p class="text-muted mb-0" id="cart-count">Descubra os melhores produtos para cuidar da sua pele.</p>
         </div>
 
     </header>
@@ -123,33 +123,6 @@
                         <hr>
                         <h5>Categoria</h5>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="skincare">
-                            <label class="form-check-label" for="skincare">Skincare</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="maquiagem">
-                            <label class="form-check-label" for="maquiagem">Maquiagem</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="corpo">
-                            <label class="form-check-label" for="corpo">Corpo</label>
-                        </div>
-                        <hr>
-                        <h5>Tipo de Produto</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="hidratante">
-                            <label class="form-check-label" for="hidratante">Hidratante</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="mascara">
-                            <label class="form-check-label" for="mascara">Máscara Facial</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="sabonete">
-                            <label class="form-check-label" for="sabonete">Sabonete</label>
-                        </div>
-                        <hr>
-                        <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="ofertas">
                             <label class="form-check-label" for="ofertas">Mais Vendidos</label>
                         </div>
@@ -159,7 +132,7 @@
                         </div>
                     </div>
                 </aside>
-                <div class="card-wrap">
+                <div class="card-wrap" id="secao-mais-vendidos">
                     <br>
                     <h2 class="text-center">
                         <a href="#" style="text-decoration: none; color: #333;">
@@ -358,12 +331,12 @@
                                 <a href="produto.html" class="btn btn-primary">Ver Produto</a>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
 
-            <div class="card-wrap">
+            <div class="card-wrap" id="secao-novidades">
                 <br>
                 <h2 class="text-center">
                     <a href="#" style="text-decoration: none; color: #333;">
@@ -541,179 +514,230 @@
                             <a href="produto.html" class="btn btn-primary">Ver Produto</a>
                         </div>
                     </div>
-                    
+
                 </div>
         </section>
 
+        <div id="feedbackCardCarousel" class="carousel slide my-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card shadow mx-auto"
+                        style="max-width: 700px; min-width: 700px; height: 250px; border-radius: 16px; display: flex; align-items: center;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center me-3"
+                                    style="width:48px; height:48px; font-weight: bold; font-size: 1.2rem;">
+                                    JS
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Juliana Silva</div>
+                                    <div class="text-muted" style="font-size: 0.95rem;">Cliente</div>
+                                </div>
+                            </div>
+                            <div class="mb-2" style="color: #ffff65;">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-2" style="color: #444;">
+                                Simplesmente apaixonada por esse hidratante! A textura é leve, absorve rápido e o
+                                perfume é maravilhoso — suave, nada enjoativo. Senti minha pele muito mais macia desde a
+                                primeira semana de uso. E o melhor: tem ingredientes naturais, o que faz toda a
+                                diferença pra mim. Recomendo de olhos fechados!
+                            </p>
+                            <a href="#" class="fw-bold" style="color: #8f77ef; text-decoration: none;">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card shadow mx-auto"
+                        style="max-width: 700px; min-width: 700px; height: 250px; border-radius: 16px; display: flex; align-items: center;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3"
+                                    style="width:48px; height:48px; font-weight: bold; font-size: 1.2rem;">
+                                    DR
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Daniel Rocha</div>
+                                    <div class="text-muted" style="font-size: 0.95rem;">Cliente</div>
+                                </div>
+                            </div>
+                            <div class="mb-2" style="color: #ffff65;">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-2" style="color: #444;">
+                                Gostei muito do sabonete Mage Clean! Tem um aroma fresco que fica na pele depois do
+                                banho, e a sensação de limpeza é ótima. Só tirei uma estrela porque achei que ele,
+                                porque achei que o produto acabava muito rápido. Fora isso, excelente qualidade e
+                                apresentação linda, dá até pra presentear.
+                            </p>
+                            <a href="#" class="fw-bold" style="color: #8f77ef; text-decoration: none;">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card shadow mx-auto"
+                        style="max-width: 700px; min-width: 700px; height: 250px; border-radius: 16px; display: flex; align-items: center;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-3"
+                                    style="width:48px; height:48px; font-weight: bold; font-size: 1.2rem;">
+                                    AT
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Amanda Teixeira</div>
+                                    <div class="text-muted" style="font-size: 0.95rem;">Cliente</div>
+                                </div>
+                            </div>
+                            <div class="mb-2" style="color: #ffff65;">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-2" style="color: #444;">
+                                Eu estava cheia de espinhas na testa e no nariz, e comecei a usar o Booster Azura por
+                                indicação da minha irmã. Em uma semana já vi melhora! Ele seca rápido, não deixa a pele
+                                oleosa e tem um cheiro bem tranquilo. Agora virou meu produto favorito de cuidados com o
+                                rosto.
+                            </p>
+                            <a href="#" class="fw-bold" style="color: #8f77ef; text-decoration: none;">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card shadow mx-auto"
+                        style="max-width: 700px; min-width: 700px; height: 250px; border-radius: 16px; display: flex; align-items: center;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center me-3"
+                                    style="width:48px; height:48px; font-weight: bold; font-size: 1.2rem;">
+                                    LS
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Larissa Souza</div>
+                                    <div class="text-muted" style="font-size: 0.95rem;">Cliente</div>
+                                </div>
+                            </div>
+                            <div class="mb-2" style="color: #ffff65;">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-2" style="color: #444;">
+                                Comprei por indicação de uma amiga o Booster Ilumini e fiquei encantada com a
+                                fragrância: leve, floral e perfeita pro dia a dia. A embalagem é linda e prática, ótima
+                                pra levar na bolsa. Os produtos realmente fazem diferença na minha rotina. Adorei o
+                                resultado!
+                            </p>
+                            <a href="#" class="fw-bold" style="color: #8f77ef; text-decoration: none;">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCardCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                    style="filter: invert(1) grayscale(1) brightness(0.2);"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#feedbackCardCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                    style="filter: invert(1) grayscale(1) brightness(0.2);"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
     </main>
 
-    <!-- Newsletter: formulário com validação de e-mail -->
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form id="newsletterForm" class="p-4 rounded bg-light shadow" novalidate>
-                    <h5 class="mb-3 text-center">Receba novidades e promoções!</h5>
-                    <p class="newsletter-title text-center">Cadastre-se e aproveite um cupom na sua primeira compra!</p>
-                    <div class="mb-3">
-                        <label for="newsletterName" class="form-label">Seu nome:</label>
-                        <input type="text" class="form-control" id="newsletterName" placeholder="Nome completo"
-                            required>
-                        <div class="invalid-feedback">
-                            Por favor, insira seu nome.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="newsletterEmail" class="form-label">Seu e-mail:</label>
-                        <input type="email" class="form-control" id="newsletterEmail" placeholder="E-mail" required>
-                        <div class="invalid-feedback">
-                            Por favor, insira um e-mail válido.
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
-                    <p class="newsletter-consent">
-                        Ao se cadastrar, você concorda em receber comunicações MXTCS de acordo com nossa
-                        <a href="#" target="_blank">política de privacidade e termos de uso</a>.
-                    </p>
-                    <div class="alert alert-success d-none" id="newsletterSuccess">
-                        Obrigado por se inscrever! Você receberá novidades e promoções em breve.
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="container">
+<!-- Footer -->
+    <div class="container" style="margin-top: 50px; background-color: #8f77ef;">
         <footer class="py-5">
             <div class="row">
                 <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
+                    <h5>Institucional</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Quem Somos</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Onde Comprar</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Parcerias</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Trabalhe Conosco</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promoções</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
+                    <h5>Suporte</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Central de Ajuda</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contato</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQ</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Política de Trocas</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Termos de Uso</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
+                    <h5>Minha Conta</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Perfil</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Meus Pedidos</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Endereços</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Métodos de Pagamento</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sair</a></li>
                     </ul>
                 </div>
                 <div class="col-md-5 offset-md-1 mb-3">
-                    <form>
-                        <h5>Subscribe to our newsletter</h5>
-                        <p>Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2"> <label for="newsletter1"
-                                class="visually-hidden">Email address</label> <input id="newsletter1" type="email"
-                                class="form-control" placeholder="Email address"> <button class="btn btn-primary"
-                                type="button">Subscribe</button> </div>
+                    <form id="newsletterForm" class="p-4 rounded bg-light shadow" novalidate>
+                        <h5 class="mb-3 text-center">Receba novidades e promoções!</h5>
+                        <p class="newsletter-title text-center">Cadastre-se e aproveite um cupom na sua primeira compra!
+                        </p>
+                        <div class="mb-3">
+                            <label for="newsletterName" class="form-label">Seu nome:</label>
+                            <input type="text" class="form-control" id="newsletterName" placeholder="Nome completo"
+                                required>
+                            <div class="invalid-feedback">
+                                Por favor, insira seu nome.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsletterEmail" class="form-label">Seu e-mail:</label>
+                            <input type="email" class="form-control" id="newsletterEmail" placeholder="E-mail" required>
+                            <div class="invalid-feedback">
+                                Por favor, insira um e-mail válido.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                        <p class="newsletter-consent">
+                            Ao se cadastrar, você concorda em receber comunicações MXTCS de acordo com nossa
+                            <a href="#" target="_blank">política de privacidade e termos de uso</a>.
+                        </p>
+                        <div class="alert alert-success d-none" id="newsletterSuccess">
+                            Obrigado por se inscrever! Você receberá novidades e promoções em breve.
+                        </div>
                     </form>
                 </div>
             </div>
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>© 2025 Company, Inc. All rights reserved.</p>
+                <p>© 2025 MXTCS. Todos os direitos reservados.</p>
                 <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Instagram"><svg class="bi"
-                                width="24" height="24">
-                                <use xlink:href="#instagram"></use>
-                            </svg></a></li>
-                    <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Facebook"><svg class="bi"
-                                width="24" height="24" aria-hidden="true">
-                                <use xlink:href="#facebook"></use>
-                            </svg></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" style="color: white;"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" style="color: white;"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" style="color: white;"><i class="bi bi-envelope" style="font-size: 1.5rem;"></i></a></li>
                 </ul>
             </div>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-    <script>
-        // Validação do formulário de newsletter
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('newsletterForm');
-            const emailInput = document.getElementById('newsletterEmail');
-            const successMsg = document.getElementById('newsletterSuccess');
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                if (form.checkValidity()) {
-                    successMsg.classList.remove('d-none');
-                    form.reset();
-                    form.classList.remove('was-validated');
-                } else {
-                    successMsg.classList.add('d-none');
-                    form.classList.add('was-validated');
-                }
-            });
-        });
-    </script>
-    <script>
-        document.getElementById('newsletterForm').addEventListener('submit', function (event) {
-            var emailInput = document.getElementById('newsletterEmail');
-            if (!emailInput.checkValidity()) {
-                emailInput.classList.add('is-invalid');
-                event.preventDefault();
-                event.stopPropagation();
-            } else {
-                emailInput.classList.remove('is-invalid');
-                alert('Obrigado por se inscrever!');
-            }
-        });
-    </script>
-    <script>
-        // Validação do formulário de newsletter (nome e e-mail)
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('newsletterForm');
-            const nameInput = document.getElementById('newsletterName');
-            const emailInput = document.getElementById('newsletterEmail');
-            const successMsg = document.getElementById('newsletterSuccess');
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                let valid = true;
-
-                if (!nameInput.value.trim()) {
-                    nameInput.classList.add('is-invalid');
-                    valid = false;
-                } else {
-                    nameInput.classList.remove('is-invalid');
-                }
-
-                if (!emailInput.checkValidity()) {
-                    emailInput.classList.add('is-invalid');
-                    valid = false;
-                } else {
-                    emailInput.classList.remove('is-invalid');
-                }
-
-                if (valid) {
-                    successMsg.classList.remove('d-none');
-                    form.reset();
-                    form.classList.remove('was-validated');
-                } else {
-                    successMsg.classList.add('d-none');
-                    form.classList.add('was-validated');
-                }
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
+    <script src="js/filtros.js"></script>
 </body>
 
 </html>

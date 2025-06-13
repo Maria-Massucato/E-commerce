@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dúvidas - MXTCS Skincare</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: #8f77ef;" data-bs-theme="light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" alt="Logo MXTCS" width="150" height="80">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="minha-conta.html" role="button">
+                                <i class="bi bi-person" style="font-size: 1.5rem;"></i><b>Minha Conta</b>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="duvidas.html" role="button">
+                                <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i> <b>Dúvidas</b>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="carrinho.html" role="button">
+                                <i class="bi bi-cart3" style="font-size: 1.5rem;"></i> <b>Carrinho</b>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="d-flex align-items-center" role="search">
+                        <input class="form-control me-2" type="search" placeholder="O que você está procurando?"
+                            aria-label="Search" style="width: 280px;" />
+                        <button class="btn p-0" type="submit" title="Pesquisar"
+                            style="background: transparent; border: none; box-shadow: none; margin-top: -1px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+       <div class="container mt-5">
+            <h1>Como podemos ajudar?</h1>
+            <p class="text-muted mb-0" id="cart-count">Encontre respostas para suas dúvidas sobre nossos produtos e serviços</p>
+        </div>
+
+        <!-- FAQ Categories -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Produtos e Ingredientes -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="bi bi-droplet-half"></i>
+                            </div>
+                            <h3 class="category-title">Produtos e Ingredientes</h3>
+                            <div class="accordion" id="accordionProdutos">
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                            Como escolher o produto ideal para minha pele?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionProdutos">
+                                        <div class="accordion-body">
+                                            Para escolher o produto ideal, identifique primeiro seu tipo de pele (oleosa, seca, mista ou sensível). Nossos produtos são formulados para diferentes necessidades: o <strong>Booster Azura</strong> é perfeito para peles oleosas e com acne, enquanto a <strong>Bruma Breeze</strong> oferece hidratação para todos os tipos de pele. Recomendamos fazer um teste de sensibilidade antes do primeiro uso.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                            Os produtos MXTCS são naturais?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionProdutos">
+                                        <div class="accordion-body">
+                                            Sim! Todos os nossos produtos contêm ingredientes naturais cuidadosamente selecionados. Utilizamos extratos botânicos, óleos essenciais e componentes naturais que respeitam o equilíbrio da sua pele. Nossos produtos são livres de parabenos, sulfatos agressivos e não testamos em animais.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                            Posso usar os produtos durante a gravidez?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionProdutos">
+                                        <div class="accordion-body">
+                                            A maioria dos nossos produtos é segura durante a gravidez, pois utilizamos ingredientes naturais. No entanto, recomendamos consultar sempre seu médico antes de incluir novos produtos em sua rotina de cuidados durante a gestação ou amamentação.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedidos e Entregas -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <h3 class="category-title">Pedidos e Entregas</h3>
+                            <div class="accordion" id="accordionPedidos">
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                            Qual o prazo de entrega?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionPedidos">
+                                        <div class="accordion-body">
+                                            O prazo de entrega varia conforme sua região: <br>
+                                            • <strong>Capitais:</strong> 3 a 5 dias úteis<br>
+                                            • <strong>Interior:</strong> 5 a 8 dias úteis<br>
+                                            • <strong>Regiões remotas:</strong> até 12 dias úteis<br><br>
+                                            Você receberá o código de rastreamento por e-mail assim que seu pedido for despachado.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                            Como acompanhar meu pedido?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionPedidos">
+                                        <div class="accordion-body">
+                                            Após a confirmação do pagamento, você receberá um e-mail com o código de rastreamento. Você também pode acompanhar seu pedido na área "Minha Conta" em nosso site, inserindo seu CPF e número do pedido.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                                            A entrega é gratuita?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionPedidos">
+                                        <div class="accordion-body">
+                                            Sim! Oferecemos frete grátis para compras acima de R$ 99,00 em todo o Brasil. Para compras abaixo deste valor, o frete é calculado conforme o CEP de destino e será exibido antes da finalização do pedido.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagamentos -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="bi bi-credit-card"></i>
+                            </div>
+                            <h3 class="category-title">Pagamentos</h3>
+                            <div class="accordion" id="accordionPagamentos">
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+                                            Quais formas de pagamento vocês aceitam?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionPagamentos">
+                                        <div class="accordion-body">
+                                            Aceitamos as seguintes formas de pagamento:<br>
+                                            • <strong>Cartão de crédito:</strong> Visa, Mastercard, Elo, American Express (até 12x sem juros)<br>
+                                            • <strong>Cartão de débito:</strong> Visa e Mastercard<br>
+                                            • <strong>PIX:</strong> Aprovação instantânea<br>
+                                            • <strong>Boleto bancário:</strong> Vencimento em 2 dias úteis
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+                                            O site é seguro para compras?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionPagamentos">
+                                        <div class="accordion-body">
+                                            Sim, totalmente seguro! Nosso site utiliza certificado SSL e criptografia de dados. Todos os pagamentos são processados por plataformas certificadas e reconhecidas no mercado. Seus dados pessoais e financeiros estão protegidos.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trocas e Devoluções -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </div>
+                            <h3 class="category-title">Trocas e Devoluções</h3>
+                            <div class="accordion" id="accordionTrocas">
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
+                                            Como solicitar troca ou devolução?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionTrocas">
+                                        <div class="accordion-body">
+                                            Você tem até 30 dias após o recebimento para solicitar troca ou devolução. Entre em contato conosco pelo e-mail <strong>sac@mxtcs.com.br</strong> ou WhatsApp informando o número do pedido e motivo da solicitação. O produto deve estar em perfeitas condições, com embalagem original.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0 mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
+                                            Quem paga o frete da devolução?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionTrocas">
+                                        <div class="accordion-body">
+                                            Se o produto apresentar defeito ou divergência, nós arcamos com os custos do frete. Em caso de desistência ou arrependimento, o frete de devolução é por conta do cliente. O reembolso será feito em até 10 dias úteis após recebermos o produto.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+ <!-- Footer -->
+    <div class="container" style="margin-top: 50px; background-color: #8f77ef;">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Institucional</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Quem Somos</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Onde Comprar</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Parcerias</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Trabalhe Conosco</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promoções</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Suporte</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Central de Ajuda</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contato</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQ</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Política de Trocas</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Minha Conta</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Perfil</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Meus Pedidos</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Endereços</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Métodos de Pagamento</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sair</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form id="newsletterForm" class="p-4 rounded bg-light shadow" novalidate>
+                        <h5 class="mb-3 text-center">Receba novidades e promoções!</h5>
+                        <p class="newsletter-title text-center">Cadastre-se e aproveite um cupom na sua primeira compra!
+                        </p>
+                        <div class="mb-3">
+                            <label for="newsletterName" class="form-label">Seu nome:</label>
+                            <input type="text" class="form-control" id="newsletterName" placeholder="Nome completo"
+                                required>
+                            <div class="invalid-feedback">
+                                Por favor, insira seu nome.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsletterEmail" class="form-label">Seu e-mail:</label>
+                            <input type="email" class="form-control" id="newsletterEmail" placeholder="E-mail" required>
+                            <div class="invalid-feedback">
+                                Por favor, insira um e-mail válido.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                        <p class="newsletter-consent">
+                            Ao se cadastrar, você concorda em receber comunicações MXTCS de acordo com nossa
+                            <a href="#" target="_blank">política de privacidade e termos de uso</a>.
+                        </p>
+                        <div class="alert alert-success d-none" id="newsletterSuccess">
+                            Obrigado por se inscrever! Você receberá novidades e promoções em breve.
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2025 MXTCS. Todos os direitos reservados.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" style="color: white;"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" style="color: white;"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#" style="color: white;"><i class="bi bi-envelope" style="font-size: 1.5rem;"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
