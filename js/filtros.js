@@ -1,175 +1,113 @@
-// Código corrigido para o sistema de filtros
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Sistema de filtros carregado'); // Para debug
-    
-    // Elementos do filtro
-    const checkboxMaisVendidos = document.getElementById('ofertas');
-    const checkboxNovidades = document.getElementById('novidades');
-    
-    // Verificar se os elementos existem
-    if (!checkboxMaisVendidos || !checkboxNovidades) {
-        console.error('Checkboxes não encontrados!');
-        return;
+// Lista de produtos (copiados do index.html)
+const produtos = [
+    {
+        nome: "Booster Azura",
+        categoria: "Booster",
+        descricao: "Hidratante Anti-Acne, Booster Azura. O Booster Azura é um poderoso aliado para a sua pele, proporcionando hidratação intensa e revitalização.",
+        preco: 37.25,
+        parcela: "em 12x R$ 3,66",
+        imagem: "img/boosterazura.png"
+    },
+    {
+        nome: "Booster Ilumini",
+        categoria: "Booster",
+        descricao: "Iluminador Facial, Booster Ilumini. O Booster Ilumini proporciona um brilho radiante e saudável para a sua pele.",
+        preco: 45.90,
+        parcela: "em 12x R$ 4,59",
+        imagem: "img/boosterilumini.png"
+    },
+    {
+        nome: "Breeze",
+        categoria: "Bruma",
+        descricao: "Bruma Hidratante, Breeze. A Bruma Breeze é refrescante e proporciona hidratação instantânea.",
+        preco: 50.00,
+        parcela: "em 12x R$ 5,00",
+        imagem: "img/breeze.png"
+    },
+    {
+        nome: "Clean",
+        categoria: "Sabonete",
+        descricao: "Sabonete Facial, Clean. O Sabonete Clean limpa profundamente e é ideal para todos os tipos de pele.",
+        preco: 30.10,
+        parcela: "em 12x R$ 3,01",
+        imagem: "img/clean.png"
+    },
+    {
+        nome: "Máscara Facial",
+        categoria: "Máscara",
+        descricao: "Máscara Facial, Mask. A Máscara Facial proporciona uma limpeza profunda e hidratação intensa.",
+        preco: 60.20,
+        parcela: "em 12x R$ 6,02",
+        imagem: "img/mask.png"
+    },
+    {
+        nome: "Glow Up",
+        categoria: "Produto Especial",
+        descricao: "Produto Especial, Glow Up. Ilumine sua rotina de cuidados com este produto especial.",
+        preco: 55.00,
+        parcela: "em 12x R$ 5,50",
+        imagem: "img/img4.jpg"
+    },
+    {
+        nome: "Fresh Skin",
+        categoria: "Produto Especial",
+        descricao: "Produto Especial, Fresh Skin. Pele renovada e hidratada todos os dias.",
+        preco: 62.90,
+        parcela: "em 12x R$ 6,29",
+        imagem: "img/img5.jpg"
+    },
+    {
+        nome: "Magic Touch",
+        categoria: "Produto Especial",
+        descricao: "Produto Especial, Magic Touch. Toque mágico para uma pele perfeita.",
+        preco: 48.75,
+        parcela: "em 12x R$ 4,87",
+        imagem: "img/img6.jpg"
     }
-    
-    // Encontrar as seções corretamente
-    const todasSecoes = document.querySelectorAll('.card-wrap');
-    console.log('Seções encontradas:', todasSecoes.length);
-    
-    let secaoMaisVendidos = null;
-    let secaoNovidades = null;
-    
-    // Identificar seções pelos títulos
-    todasSecoes.forEach(secao => {
-        const titulo = secao.querySelector('h2');
-        if (titulo) {
-            const textoTitulo = titulo.textContent.trim().toLowerCase();
-            console.log('Título encontrado:', textoTitulo);
-            
-            if (textoTitulo.includes('mais vendidos')) {
-                secaoMaisVendidos = secao;
-                console.log('Seção Mais Vendidos identificada');
-            } else if (textoTitulo.includes('novidades')) {
-                secaoNovidades = secao;
-                console.log('Seção Novidades identificada');
-            }
-        }
-    });
-    
-    // Verificar se as seções foram encontradas
-    if (!secaoMaisVendidos || !secaoNovidades) {
-        console.error('Seções não encontradas corretamente');
-        console.log('Mais Vendidos:', secaoMaisVendidos);
-        console.log('Novidades:', secaoNovidades);
-        return;
-    }
-    
-    // Função para atualizar a visibilidade das seções
-    function atualizarFiltros() {
-        const maisVendidosAtivo = checkboxMaisVendidos.checked;
-        const novidadesAtivo = checkboxNovidades.checked;
-        
-        console.log('Filtros:', {
-            maisVendidos: maisVendidosAtivo,
-            novidades: novidadesAtivo
-        });
-        
-        // Lógica de exibição
-        if (!maisVendidosAtivo && !novidadesAtivo) {
-            // Nenhum filtro ativo - mostra tudo
-            secaoMaisVendidos.style.display = 'block';
-            secaoNovidades.style.display = 'block';
-        } else if (maisVendidosAtivo && !novidadesAtivo) {
-            // Apenas Mais Vendidos
-            secaoMaisVendidos.style.display = 'block';
-            secaoNovidades.style.display = 'none';
-        } else if (!maisVendidosAtivo && novidadesAtivo) {
-            // Apenas Novidades
-            secaoMaisVendidos.style.display = 'none';
-            secaoNovidades.style.display = 'block';
-        } else {
-            // Ambos ativos - mostra tudo
-            secaoMaisVendidos.style.display = 'block';
-            secaoNovidades.style.display = 'block';
-        }
-    }
-    
-    // Event listeners
-    checkboxMaisVendidos.addEventListener('change', function() {
-        console.log('Checkbox Mais Vendidos alterado:', this.checked);
-        atualizarFiltros();
-    });
-    
-    checkboxNovidades.addEventListener('change', function() {
-        console.log('Checkbox Novidades alterado:', this.checked);
-        atualizarFiltros();
-    });
-    
-    // Estado inicial - mostra todas as seções
-    atualizarFiltros();
-    
-    console.log('Sistema de filtros inicializado com sucesso');
-});
+];
 
-// Alternativa: Sistema de filtro por produtos individuais
-function sistemaFiltroAvancado() {
-    document.addEventListener('DOMContentLoaded', function() {
-        const checkboxMaisVendidos = document.getElementById('ofertas');
-        const checkboxNovidades = document.getElementById('novidades');
-        
-        // Marcar produtos com atributos de categoria
-        function marcarProdutos() {
-            const todasSecoes = document.querySelectorAll('.card-wrap');
-            
-            todasSecoes.forEach(secao => {
-                const titulo = secao.querySelector('h2');
-                if (titulo) {
-                    const textoTitulo = titulo.textContent.trim().toLowerCase();
-                    const produtos = secao.querySelectorAll('.card');
-                    
-                    if (textoTitulo.includes('mais vendidos')) {
-                        produtos.forEach(produto => {
-                            produto.setAttribute('data-categoria', 'mais-vendidos');
-                        });
-                    } else if (textoTitulo.includes('novidades')) {
-                        produtos.forEach(produto => {
-                            produto.setAttribute('data-categoria', 'novidades');
-                        });
-                    }
-                }
-            });
-        }
-        
-        function filtrarProdutos() {
-            const maisVendidosAtivo = checkboxMaisVendidos.checked;
-            const novidadesAtivo = checkboxNovidades.checked;
-            const todosProdutos = document.querySelectorAll('.card[data-categoria]');
-            
-            todosProdutos.forEach(produto => {
-                const categoria = produto.getAttribute('data-categoria');
-                let mostrar = false;
-                
-                // Se nenhum filtro ativo, mostra tudo
-                if (!maisVendidosAtivo && !novidadesAtivo) {
-                    mostrar = true;
-                } else {
-                    // Verifica se deve mostrar baseado nos filtros ativos
-                    if (maisVendidosAtivo && categoria === 'mais-vendidos') {
-                        mostrar = true;
-                    }
-                    if (novidadesAtivo && categoria === 'novidades') {
-                        mostrar = true;
-                    }
-                }
-                
-                produto.style.display = mostrar ? 'block' : 'none';
-            });
-            
-            // Gerenciar títulos das seções
-            const todasSecoes = document.querySelectorAll('.card-wrap');
-            todasSecoes.forEach(secao => {
-                const produtos = secao.querySelectorAll('.card[data-categoria]');
-                const produtosVisiveis = Array.from(produtos).some(p => p.style.display !== 'none');
-                
-                // Mostra/oculta a seção inteira se não há produtos visíveis
-                const titulo = secao.querySelector('h2');
-                if (titulo) {
-                    secao.style.display = produtosVisiveis ? 'block' : 'none';
-                }
-            });
-        }
-        
-        // Inicializar
-        marcarProdutos();
-        
-        // Event listeners
-        checkboxMaisVendidos.addEventListener('change', filtrarProdutos);
-        checkboxNovidades.addEventListener('change', filtrarProdutos);
-        
-        // Estado inicial
-        filtrarProdutos();
-    });
+// Função para formatar preço
+function formatarPreco(valor) {
+    return "R$ " + valor.toFixed(2).replace('.', ',');
 }
 
-// Para usar o sistema avançado, descomente a linha abaixo:
-// sistemaFiltroAvancado();
+// Renderiza os produtos no catálogo
+function renderizarProdutos(lista) {
+    const container = document.getElementById('products-container');
+    if (!lista.length) {
+        container.innerHTML = '<div class="empty-state">Nenhum produto encontrado.</div>';
+        document.getElementById('results-count').textContent = 0;
+        return;
+    }
+    let html = '<div class="product-grid">';
+    lista.forEach(prod => {
+        html += `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${prod.imagem}" alt="${prod.nome}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${prod.categoria}</div>
+                        <div class="product-title">${prod.nome}</div>
+                        <div class="product-description">${prod.descricao}</div>
+                        <div class="product-price">
+                            <span class="price-current">${formatarPreco(prod.preco)}</span>
+                            <span class="price-installment">${prod.parcela}</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                `;
+    });
+    html += '</div>';
+    container.innerHTML = html;
+    document.getElementById('results-count').textContent = lista.length;
+}
+
+// Inicializa ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+    renderizarProdutos(produtos);
+    document.getElementById('loading-state')?.remove();
+});
