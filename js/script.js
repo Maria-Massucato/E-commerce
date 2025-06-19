@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // JS da página de Carrinho
-
-// Sample product data (normally would come from your main site)
 const sampleProducts = [
     {
         id: 1,
@@ -76,7 +74,7 @@ const sampleProducts = [
     }
 ];
 
-// Cart management
+// Carrinho de compras
 let cart = [];
 let appliedCoupon = null;
 const freeShippingThreshold = 100.00;
@@ -89,9 +87,9 @@ const validCoupons = {
     'MXTCS20': { discount: 0.20, description: '20% de desconto' }
 };
 
-// Initialize cart with sample items for demonstration
+// inicializa o carrinho
 function initializeCart() {
-    // Add some sample items to demonstrate the cart functionality
+    // Adiciona alguns itens de exemplo para demonstrar a funcionalidade do carrinho
     cart = [
         { ...sampleProducts[0], quantity: 2 },
         { ...sampleProducts[1], quantity: 1 },
@@ -241,15 +239,15 @@ function checkout() {
         return;
     }
 
-    // Simulate checkout process
+    // Simula o processo de checkout
     const total = document.getElementById('total').textContent;
     alert(`Redirecionando para o pagamento...\nTotal: ${total}\n\nObrigado por escolher MXTCS Skincare! 💜`);
 
-    // In a real application, this would redirect to a payment processor
+    // Em uma aplicação real, isso redirecionaria para um processador de pagamento
     // window.location.href = 'checkout.html';
 }
 
-// Add item to cart function (can be called from product pages)
+// Função para adicionar item ao carrinho (pode ser chamada a partir das páginas de produtos)
 function addToCart(productId, quantity = 1) {
     const product = sampleProducts.find(p => p.id === productId);
     if (!product) return;
@@ -264,7 +262,7 @@ function addToCart(productId, quantity = 1) {
     updateCartDisplay();
 }
 
-// Initialize the cart when page loads
+// Inicializa o carrinho ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
     initializeCart();
 });

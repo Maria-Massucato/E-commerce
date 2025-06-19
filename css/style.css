@@ -175,6 +175,62 @@ hr {
   }
 }
 
+/* Responsividade para o feedbackCardCarousel */
+@media (max-width: 768px) {
+  #feedbackCardCarousel .card {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
+    margin: 25px;
+  }
+}
+@media (max-width: 480px) {
+  #feedbackCardCarousel .card {
+    padding: 0 2px;
+    margin: 25px;
+  }
+  #feedbackCardCarousel .card-body {
+    padding: 1rem;
+    margin: 25px;
+  }
+}
+
+.feedback-card {
+  width: 100%;
+  max-width: 700px;
+  min-width: 0;
+  height: 250px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  margin: 25px;
+}
+
+@media (max-width: 900px) {
+  .feedback-card {
+    max-width: 95vw;
+    height: auto;
+    min-width: 0;
+    margin: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .feedback-card {
+    max-width: 100vw;
+    height: auto;
+    border-radius: 10px;
+    padding: 0 4px;
+    margin: 25px;
+  }
+  .feedback-card .card-body {
+    padding: 1rem;
+    margin: 25px;
+  }
+}
+
 /* CSS da página Carrinho */
 
 :root {

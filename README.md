@@ -1,6 +1,8 @@
 # E-commerce
 <h4>Trabalho Prático de Desenvolvimento Front-End.</h4>
 <br>
+<h5>Aluna: Maria Eduarda Machado Massucato</h5>
+<br>
 <b>Tema: Template Profissional de E-commerce de Cosméticos</b>
 <br>
 <br>
